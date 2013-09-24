@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---- INICIAL -----*/
+
+* { margin:0; padding:0; border:0; font-family:Arial, Helvetica, sans-serif; }
+
+
+
+/*----- HOME -----*/
+
+.pokemon { float:left; }
+
+.pokemon-foto { width:350px; height:125px; display:block; margin-bottom:10px; }
+.pokemon-foto-b, .pokemon-foto-f {
+	width:130px; height:125px; background-repeat:no-repeat; background-position:bottom center; float:left;
+}
+
+.pokemon-info { margin-bottom:10px; }
+.pokemon-info-id { background:url(etc/pokeball.png) no-repeat; font-weight:bold; padding-left:25px; padding-right:10px; }
+.pokemon-info-nombre { font-weight:bold; padding-right:10px; }
+
+.pokemon-stats { width:350px; height:120px; }
+.pokemon-stats-info { float:left; width:90px; font-size:14px; }
+.pokemon-stats-bar { float:left; height:15px; background:limeGreen; font-size:10px; text-align:right; }
