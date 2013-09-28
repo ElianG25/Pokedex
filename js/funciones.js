@@ -2,15 +2,19 @@
 
 window.onload = function(){
 	for (var p = 0; p < pokemons.length; p++) {
+		var parImpar = 'impar';
+		
+		if (p%2 == 0) {
+			parImpar = 'par';
+		}
+		
 		$('#pokedex').append(
-			'<div id="' + pokemons[p].numero + '" class="pokemon">' +
-				'<a class="poke-boton" href="#">' + 
-					'<img src="' + 'pokes/icons/' + pokemons[p].numero + '.png' + '" />' + 
-					'<span>' + pokemons[p].nombre + '</span>' + 
-				'</a>' + 
-			'</div>'
+			'<a class="pokemon ' + parImpar + '" id="' + pokemons[p].numero + '" href="#">' + 
+				'<img src="' + 'pokes/icons/' + pokemons[p].numero + '.png' + '" />' + 
+				'<span>' + pokemons[p].numero + ' - ' + pokemons[p].nombre + '</span>' + 
+			'</a>'
 		);
-		botonChar(p);
+		//botonChar(p);
 	}
 }
 
@@ -51,54 +55,3 @@ function botonChar(num) {
 		});
 	});
 }
-
-/*
-	<div class="pokemon">
-		<?php
-		if (strlen($poke->id) == 1) : $pokeID = '00'.$poke->id;
-		elseif (strlen($poke->id) == 2) : $pokeID = '0'.$poke->id;
-		else : $pokeID = $poke->id;
-		endif;
-		?>
-		<div class="pokemon-foto">
-			<div class="pokemon-foto-b" style="background-image:url(pokes/backs/<?php echo $pokeID; ?>.gif);"></div>
-			<div class="pokemon-foto-f" style="background-image:url(pokes/front/<?php echo $pokeID; ?>.gif);"></div>
-		</div>
-		<div class="pokemon-info">
-			<span class="pokemon-info-id">
-				<?php echo $pokeID; ?>
-			</span>
-			<span class="pokemon-info-nombre">
-				<?php echo $poke->nombre; ?>
-			</span>
-			<span class="pokemon-info-elementos">
-				<img src="elementos/<?php echo $poke->elem1; ?>.gif" /> 
-				<?php if ($poke->elem2 != '') : ?>
-					<img src="elementos/<?php echo $poke->elem2; ?>.gif" />
-				<?php endif; ?>
-			</span>
-		</div>
-		<div class="pokemon-stats">
-			<div class="pokemon-stats-info">Total:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo ceil( ($poke->total / 720) * 250); ?>px; background-color:#F00; color:#FFF;"><?php echo $poke->total; ?></div>
-			<br />
-			<div class="pokemon-stats-info">Salud:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo $poke->vid; ?>px;"><?php echo $poke->vid; ?></div>
-			<br />
-			<div class="pokemon-stats-info">Ataque:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo $poke->atq; ?>px;"><?php echo $poke->atq; ?></div>
-			<br />
-			<div class="pokemon-stats-info">Defensa:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo $poke->def; ?>px;"><?php echo $poke->def; ?></div>
-			<br />
-			<div class="pokemon-stats-info">Atq.Especial:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo $poke->aes; ?>px;"><?php echo $poke->aes; ?></div>
-			<br />
-			<div class="pokemon-stats-info">Def.Especial:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo $poke->des; ?>px;"><?php echo $poke->des; ?></div>
-			<br />
-			<div class="pokemon-stats-info">Velocidad:</div>
-			<div class="pokemon-stats-bar" style="width:<?php echo $poke->vel; ?>px;"><?php echo $poke->vel; ?></div>
-		</div>
-	</div>
-*/
