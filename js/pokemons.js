@@ -6594,7 +6594,6 @@ pokemons[313].skills[0] = "___";
 pokemons[313].skills[1] = "___";
 pokemons[313].moves = new Array();
 pokemons[313].moves[0] = "___";
-
 pokemons[313].moves[1] = "___";
 
 pokemons[314] = new Object();
@@ -7373,7 +7372,7 @@ pokemons[350].skills[1] = "___";
 pokemons[350].moves = new Array();
 pokemons[350].moves[0] = "___";
 pokemons[350].moves[1] = "___";
-
+/*
 pokemons[351] = new Object();
 pokemons[351].nombre = "Castform (rainy)";
 pokemons[351].numero = "351rn";
@@ -14180,3 +14179,4 @@ pokemons[675].skills[1] = "___";
 pokemons[675].moves = new Array();
 pokemons[675].moves[0] = "___";
 pokemons[675].moves[1] = "___";
+*/

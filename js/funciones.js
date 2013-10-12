@@ -14,44 +14,88 @@ window.onload = function(){
 				'<span>' + pokemons[p].numero + ' - ' + pokemons[p].nombre + '</span>' + 
 			'</a>'
 		);
-		//botonChar(p);
+		
+		botonCharClick(p);
 	}
+	botonChar(0);
 }
 
+window.maxBarra = 140;
+window.maxTotal = 720;
+window.maxStats = 255;
+
 function botonChar(num) {
-	$('#' + pokemons[num].nombre + ' a').click(function(){
-		pokemons[num].nombre
-		pokemons[num].numero
-		pokemons[num].elem1
-		pokemons[num].elem2
+	$('#pokeinfo').html('');
+
+	
+/*----- DATOS BASICOS -----*/
 
 
-/*----- UNIQUE SKILLS -----*/
+	var elementos = '<img src="elementos/' + pokemons[num].elem1 + '.gif">';
+	
+	if (pokemons[num].elem2 != '') {
+		elementos = elementos + '<img src="elementos/' + pokemons[num].elem2 + '.gif">';
+	}
 
-		$('#pokeinfo').html('');	
-		$('#pokeinfo').append(
-			'<div class="pokemon">' + 
-				'<h3>' + pokemons[num].unskills[us].nombre + '</h3>' + 
-				'<table width="100%" border="0" cellspacing="0" cellpadding="0">' + 
-					'<tr><td width="80">Daño</td><td>' + pokemons[num].unskills[us].poder + '</td></tr>' + 
-					'<tr><td>Atributo</td><td>' + pokemons[num].unskills[us].atrib + '</td></tr>' + 
-					'<tr><td>Elemento</td><td>' + pokemons[num].unskills[us].elem + '</td></tr>' + 
-					'<tr><td>Altura</td><td>' + pokemons[num].unskills[us].alto + '</td></tr>' + 
-					'<tr><td>Rango</td><td>' + pokemons[num].unskills[us].rango + '</td></tr>' + 
-					'<tr><td>Info</td><td>' + pokemons[num].unskills[us].info + '</td></tr>' + 
-				'</table>' + 
-			'</div>'
-		);
+	$('#pokeinfo').append(
+		'<div class="pokemon-foto">' + 
+			'<div class="pokemon-foto-f" style="background-image:url(pokes/front/' + pokemons[num].numero + '.gif);"></div>' + 
+		'</div>' + 
+		'<div class="pokemon-info">' + 
+			'<div class="pokemon-info-nombre">' + pokemons[num].numero + ' - ' + pokemons[num].nombre + '</div>' +
+			'<div class="pokemon-info-elementos">' + elementos + '</div>' +
+		'</div>'
+	);
+
+	
+/*----- STATS -----*/
+	
+	
+	var pxTotal = Math.ceil( window.maxBarra * (pokemons[num].stats.total / window.maxTotal) );
+	var pxVid = Math.ceil( window.maxBarra * (pokemons[num].stats.vid / window.maxStats) );
+	var pxAtq = Math.ceil( window.maxBarra * (pokemons[num].stats.atq / window.maxStats) );
+	var pxDef = Math.ceil( window.maxBarra * (pokemons[num].stats.def / window.maxStats) );
+	var pxAes = Math.ceil( window.maxBarra * (pokemons[num].stats.aes / window.maxStats) );
+	var pxDes = Math.ceil( window.maxBarra * (pokemons[num].stats.des / window.maxStats) );
+	var pxVel = Math.ceil( window.maxBarra * (pokemons[num].stats.vel / window.maxStats) );
+	
+	$('#pokeinfo').append(
+		'<div class="pokemon-stats">' +
+			'<div class="pokemon-stats-info">Total:</div>' +
+			'<div class="pokemon-stats-bar" style="width:' + pxTotal + 'px; background-color:#F00; color:#FFF;">' + 
+				pokemons[num].stats.total + 
+			'</div>' +
+			'<div class="pokemon-stats-info">Salud:</div>' + 
+			'<div class="pokemon-stats-bar" style="width:' + pxVid + 'px;">' + pokemons[num].stats.vid + '</div>' +
+			'<div class="pokemon-stats-info">Ataque:</div>' +
+			'<div class="pokemon-stats-bar" style="width:' + pxAtq + 'px;">' + pokemons[num].stats.atq + '</div>' + 
+			'<div class="pokemon-stats-info">Defensa:</div>' +
+			'<div class="pokemon-stats-bar" style="width:' + pxDef + 'px;">' + pokemons[num].stats.def + '</div>' + 
+			'<div class="pokemon-stats-info">Atq.Especial:</div>' + 
+			'<div class="pokemon-stats-bar" style="width:' + pxAes + 'px;">' + pokemons[num].stats.aes + '</div>' +
+			'<div class="pokemon-stats-info">Def.Especial:</div>' +
+			'<div class="pokemon-stats-bar" style="width:' + pxDes + 'px;">' + pokemons[num].stats.des + '</div>' +
+			'<div class="pokemon-stats-info">Velocidad:</div>' +
+			'<div class="pokemon-stats-bar" style="width:' + pxVel + 'px;">' + pokemons[num].stats.vel + '</div>' +
+		'</div>'
+	);
 
 
-/*----- ANIMACION -----*/
-		
-		$('#ficha-char').show();
-		$('#ficha-char').animate({opacity:0.9},500);
-		$('#ficha-volver').click(function() {
-			$('#ficha-char').animate({opacity:0},500, function(){
-				$('#ficha-char').hide();
-			});
+/*----- ANIMACION -----*
+	
+	
+	$('#ficha-char').show();
+	$('#ficha-char').animate({opacity:0.9},500);
+	$('#ficha-volver').click(function() {
+		$('#ficha-char').animate({opacity:0},500, function(){
+			$('#ficha-char').hide();
 		});
+	});
+	/**/
+}
+
+function botonCharClick(num) {
+	$('#' + pokemons[num].numero).click(function(){
+		botonChar(num);
 	});
 }

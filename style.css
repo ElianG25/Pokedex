@@ -19,7 +19,7 @@
 /*----- POKEDEX -----*/
 
 
-#pokedex { width:160px; background-color:#F00; padding:5px; }
+#pokedex { width:180px; height:420px; background-color:#F00; padding:5px; position:fixed; overflow-y:scroll; }
 .pokemon {
 	display:block; width:150px; height:32px; padding:5px; text-decoration:none; margin-bottom:5px;
 	-webkit-border-radius:15px;
@@ -40,11 +40,15 @@
 /*----- POKEINFO -----*/
 
 #pokeinfo { width:140px; padding:5px; background-color:#FC0; position:fixed; top:0; left:170px; }
-.pokemon-foto { width:140px; height:125px; display:block; margin-bottom:10px; }
-.pokemon-foto-b, .pokemon-foto-f { width:140px; height:125px; background-repeat:no-repeat; background-position:bottom center; float:left; }
+.pokemon-foto { width:140px; height:120px; display:block; margin-bottom:10px; }
+.pokemon-foto-b, .pokemon-foto-f { width:140px; height:120px; background-repeat:no-repeat; background-position:bottom center; float:left; }
+.pokemon-foto-f { border-radius:20px; background-color:#FFF; }
+
+.pokemon-info-elementos { text-align:center; }
+.pokemon-info-elementos img { margin:0 10px; }
 
 .pokemon-info { margin-bottom:10px; font-size:8px; }
-.pokemon-info-nombre { background:url(etc/pokeball.png) no-repeat; padding-left:25px; text-transform:uppercase; margin-bottom:5px; }
+.pokemon-info-nombre { background:url(etc/pokeball.png) no-repeat; padding-left:25px; text-transform:uppercase; height:25px; }
 
 .pokemon-stats { width:140px; }
 .pokemon-stats-info { width:140px; font-size:8px; }
