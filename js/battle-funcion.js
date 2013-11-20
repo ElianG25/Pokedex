@@ -1,5 +1,3 @@
-// JavaScript Document
-
 window.onload = function(){
 	for (var p = 0; p < pokemons.length; p++) {
 		var parImpar = 'impar';

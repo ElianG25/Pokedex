@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+
+/*---- INICIAL -----*/
+
+
+@font-face {
+	font-family:'pixChicago';
+	src:url('fonts/pixchicago.eot');
+	src:url('fonts/pixchicago.eot') format('embedded-opentype'),
+		url('fonts/pixchicago.woff') format('woff'),
+		url('fonts/pixchicago.ttf') format('truetype'),
+		url('fonts/pixchicago.svg#pixChicago') format('svg');
+}
+
+* { margin:0; padding:0; border:0; font-family:'pixChicago'; }
+
+
+/*----- POKEINFO -----*/
+
+#pokebattle { width:300px; padding:10px; background-color:#FC0; }
+#pokerival, #pokeplayer { width:300px; height:120px; display:block; }
+
+.poke-foto-b, .poke-foto-f {
+	width:140px; height:120px; display:block; background-repeat:no-repeat; background-position:bottom center; float:left; border-radius:20px; background-color:#FFF; float:left;
+}
+
+.poke-info { width:150px; height:40px; margin-bottom:10px; float:left; }
+#pokerival .poke-info { margin-right:10px; }
+#pokeplayer .poke-info { margin-left:10px; margin-top:70px; }
+.poke-info-nombre { text-transform:uppercase; height:25px; font-size:8px; font-family:'pixChicago'; }
+.poke-info-vida { width:150px; height:15px; display:block; background-color:#000; }
+.poke-info-vida-hp { width:120px; height:15px; display:block; background-color:#0F0; }
+
